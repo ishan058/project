@@ -1,0 +1,23 @@
+for getting all data
+===========================
+var all_data=db.tbl_name.ToList();
+
+for adding new data to database
+=========================
+tbl_name obj_name=new tbl_name();
+db.tbl_name.Add(obj_name);
+db.SaveChanges();
+
+for updating data to database
+=========================
+first get data ->
+tbl_name obj_name=db.tbl_name.Find(primary_key_id); // db.tbl_name.FirstorDefault(x=>x.column_name=='data_to_compare');
+db.Entry(obj_name).State =EntityState.Modified;
+db.SaveChanges();
+
+
+for deleting data from datababase
+======================
+tbl_name obj_name =db.tbl_name.Find(primary_key_id);
+db.tbl_name.Remove(obj_name);
+db.SaveChanges();
